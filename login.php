@@ -5,14 +5,7 @@
 	<?php
 			$userEmail = $_POST['email']; 
 			$userPassword = $_POST['password'];
-			
-			// Create connection
-			$conn = new mysqli($servername="localhost", $username = "", $password = "", $dbname = "test");
-
-			// Check connection
-			if ($conn->connect_error) {
-			die("Connection failed: " . $conn->connect_error);
-			} 
+			include ('conn.php'); 
 			//echo "Connected successfully";
 			$sql = "SELECT * FROM login WHERE Email = '$userEmail'";
 			$result = $conn->query($sql);
@@ -24,9 +17,12 @@
 		
 		
 		if($dataEmail == $userEmail && $dataPassword == $userPassword) 
-		{
+		{	
+			session_start();
+			$_SESSION['login_user']= $userEmail;
 			header('Location: home.php');
 			}
+			
 		
 		else{
 			header('Location: loginFailed.php');
@@ -34,7 +30,7 @@
 		}
 			
 		} else {
-			header('Location: loginFailed.php');;
+			header('Location: loginFailed.php');
 		}
 			
 			?>

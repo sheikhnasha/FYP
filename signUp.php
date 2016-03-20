@@ -36,7 +36,7 @@
 				<br>
 					<div class="col-sm-12">
 						
-							<input type="text" name="signEmail" class="form-control" id="exampleInputAmount" placeholder="Email" required>
+							<input type="email" name="signEmail" class="form-control" id="exampleInputAmount" placeholder="Email" required>
 							
 					</div>
 				</div>

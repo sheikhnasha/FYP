@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <title>CloudGraphy</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +22,6 @@
 					<div class="col-sm-12">
 						
 							<input type="text" name="email" required class="form-control" id="exampleInputAmount" placeholder="Email">
-					
 					</div>
 				</div>
 				
