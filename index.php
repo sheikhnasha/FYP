@@ -14,16 +14,14 @@
 	   <br><br><br><br><br><br><br>
 	   <div class="container" style="width : 450px;">
 	   
-		<form class="well form-horizontal" method="post" action="home.php">
+		<form class="well form-horizontal" method="post" action="login.php">
 		
 					<div class="form-group">
 				<br>
 					<div class="col-sm-12">
-					<div class="input-group">
 						
-							<input type="text" class="form-control" id="exampleInputAmount" placeholder="Email">
-								<div class="input-group-addon">@nottingham.edu.my</div>
-						</div>
+							<input type="text" name="email" required class="form-control" id="exampleInputAmount" placeholder="Email">
+					
 					</div>
 				</div>
 				
@@ -31,7 +29,7 @@
 				<div class="form-group">
 					
 						<div class="col-sm-12">
-							<input type="password" name = "password" class="form-control" id="inputPassword3" placeholder="Password">
+							<input type="password" name = "password" required class="form-control" id="inputPassword3" placeholder="Password">
 						</div>
 				</div>
   
