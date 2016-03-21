@@ -22,7 +22,7 @@
 <br>	
 
 	<div class="container">
-			<form class="well form-horizontal" method="post" action="studyback.php">
+			<form class="well form-horizontal" method="post" action="studyback.php" enctype="multipart/form-data">
 				
 				<div class="row">
 					<div class="col-lg-6">
@@ -198,7 +198,7 @@
 					<div class="col-lg-6">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">CT SCAN Date</span>
-							<input type="date" name="CTDate" class="form-control" placeholder="dd/mm/yyyy" >
+							<input type="date" name="CTDate" class="form-control" placeholder="dd/mm/yyyy" required>
 						</div>
 					</div>
 			
@@ -217,7 +217,7 @@
             <div class="input-group">
                 <span class="input-group-btn">
                     <span class="btn btn-primary btn-file">
-                        Browse&hellip; <input type="file" multiple>
+                        Browse&hellip; <input type="file" name="juice[]" multiple required>
                     </span>
                 </span>
                 <input type="text" class="form-control" readonly>
@@ -229,7 +229,7 @@
 					<div class='row'>
 						<div class="col-lg-2">
 						</div>
-						<button  type="submit" name="Submit" class="btn btn-success" style="width: 320px; height: 40px">Add Study</button> 
+						<button  type="submit" value="Upload Image" name="Submit" class="btn btn-success" style="width: 320px; height: 40px">Add Study</button> 
 						<button  type="button" class="btn btn-danger" style="width: 320px; margin-left: 100px; height: 40px">Restart</button> 
 					</div>
 					</form>
