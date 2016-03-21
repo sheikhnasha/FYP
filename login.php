@@ -14,12 +14,16 @@
 		$row = $result->fetch_assoc();
         $dataEmail = $row["Email"]; 
 		$dataPassword = $row["Password"];
+		$userType = $row["userType"];
+		$userID = $row["userID"];
 		
 		
 		if($dataEmail == $userEmail && $dataPassword == $userPassword) 
 		{	
 			session_start();
 			$_SESSION['login_user']= $userEmail;
+			$_SESSION['user_type']= $userType;
+			$_SESSION['user_id']= $userID;
 			header('Location: home.php');
 			}
 			

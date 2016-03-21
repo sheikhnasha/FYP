@@ -1,5 +1,12 @@
 <!DOCTYPE html>
+<?php 
+session_start();
+if(isset ($_SESSION['login_user'])){
+				header('Location: home.php');
+}
+?>
 <html lang="en">
+
 
 <title>CloudGraphy</title>
 
