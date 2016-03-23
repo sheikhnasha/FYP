@@ -15,7 +15,7 @@
 			
 			
 			$sql = "INSERT INTO `studyobject` 
-			(`objectID`, `firstName`, `surName`, `ICNumber`, `telephone`, `DOB`, `Sex`, `height`, `weight`, `homeAddress`, `homeCity`, `homeState`, `DOD`, `deathCause`) 
+			(`objectID`, `objectFirstname`, `objectSurname`, `ICNumber`, `telephone`, `DOB`, `Sex`, `height`, `weight`, `homeAddress`, `homeCity`, `homeState`, `DOD`, `deathCause`) 
 			VALUES (NULL, '$objectFN', '$objectSN', '$objectIC ', '$objectTel', '$objectDOB', '$objectSex', '$objectHeight', '$objectWeight', '$objectAdd', '$objectState', '$objectState', '$objectDOD', '$objectCause');";
 			$result = $conn->query($sql);
 			

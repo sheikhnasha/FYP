@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php include ('session.php');?>
 
+
 <html lang="en">
 
 
@@ -17,13 +18,14 @@
 <body>
 <div class="navBar">
 <?php
+$include = "home";
  include 'navBar.php';?>
   </div>
 </nav>
 </div>
   
 <div class=" well container">
-  		<div class="row">
+  		<!--<div class="row">
 		
 		<?php for($i=0;$i<=7;$i++) :?>
 				<div class="col-sm-3">
@@ -88,56 +90,64 @@
 		</div>
 		</div>
 		<?php endfor?>
-		</div>
+		</div>-->
 		
 		<br><br>
 		
-	<?php for($i=0;$i<=7;$i++) :?>
+	<?php
+	$sql = ("SELECT * FROM studyobject INNER JOIN ctscan ON studyobject.`objectID`=ctscan.`objectID` ORDER BY `ctscan`.`date` DESC ");
+	$result = $conn->query($sql);
+	if ($result->num_rows > 0) :
+	while($row = $result->fetch_assoc()) :
+	?>
 	   <div class="col-md-12" style= "background:#ffffff; border-radius: 5px;  border-style: solid;
     border-width: 1px; margin-bottom: 10px; border-color: #D1D1D1">
 	
 	<div class="row">
 				<a style="cursor:pointer"><div class="col-sm-1">
 				<div class="input-group">
-				<h5>000000</h5>
+				<h5><?php echo $row['objectID'];?></h5>
 				</div>
 				</div>
 				
 				
 				<div class="col-sm-4">
 				<div class="input-group">
-				<h5>studyObject Name</h5>
+				<h5><?php echo $row['objectFirstname'] ." ". $row['objectSurname'];?></h5>
 				</div>
 				</div></a>
 				
 				
 				<div class="col-sm-2">
 				<div class="input-group">
-				<h5>DOB:</h5>
+				<h5>DOB: <?php echo $row['DOB'] ?></h5>
 				</div>
 				</div> 
 				
 				<div class="col-sm-2">
 				<div class="input-group">
-				<h5>DOD:</h5>
+				<h5>DOD: <?php echo $row['DOD']?></h5>
 				</div>
 				</div>
 				
 				<div class="col-sm-2">
 				<div class="input-group">
-				<h5>CT Scan Date:</h5>
+				<h5>CT Scan : <?php echo $row['date']?></h5>
 				</div>
 				</div>
 				
 				<div class="col-sm-1">
 				<div class="input-group">
-				<button class="btn btn-default">Profile</button>
+				<a href="studyProfile.php?add=<?php echo $row['objectID'];?>"><button class="btn btn-default">Profile</button></a>
 				</div>
 				</div>
 				
 	</div>
 	</div>
-	<?php endfor?>
+	<?php endwhile;
+	else :?>
+	<h3> No Record Found!<h3>
+	<?php endif;?>
 	
 	
 	
