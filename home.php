@@ -17,16 +17,185 @@
 <body>
 <div class="navBar">
 <?php
-$include = "home";
  include 'navBar.php';?>
   </div>
 </nav>
 </div>
   
-<div class="container">
-  <h3><?php echo $include;?></h3>
-  <p>A navigation bar is a navigation header that is placed at the top of the page.</p>
+<div class=" well container">
+  		<div class="row">
+		
+		<?php for($i=0;$i<=7;$i++) :?>
+				<div class="col-sm-3">
+				<div class="input-group">   
+		 
+	   <div class="col-sm-12" style= "background:#ffffff; border-radius: 5px;  border-style: solid;
+    border-width: 1px; margin-bottom: 30px; border-color: #D1D1D1">
+
+		
+				<a><div class="row">
+				<div class="col-sm-3">
+				<div class="input-group">
+				<h5>000000</h5>
+				</div>
+				</div>
+				
+				
+				<div class="col-sm-8">
+				<div class="input-group">
+				<h5>studyObject Name</h5>
+				</div>
+				</div>
+				</div></a>
+				<div class="row">
+				<div class="col-sm-6">
+				<div class="input-group">
+				<small style="font-size:75%;">DOB: 22-9-1991</small>
+				</div>
+				</div>
+				
+				
+				<div class="col-sm-6">
+				<div class="input-group">
+				<small style="font-size:75%;">DOD: 22-9-1991</small>
+				</div>
+				</div>
+				</div>
+				
+				<div class="row">
+				<div class="col-sm-12">
+				<div class="input-group">
+				<small style="font-size:75%;">CT Scan Date: 22-9-1991</small>
+				</div>
+				</div>
+			
+				</div>
+				
+				<div class="row">
+				<div class="col-sm-3">
+				<div class="input-group">
+				
+				</div>
+				</div>			
+
+			<div class="col-sm-5">
+				<div class="input-group">
+				<button class="btn btn-link">Profile</button>
+				</div>
+				</div>
+			
+				</div>
+				
+				
+				
+				</div>
+		</div>
+		</div>
+		<?php endfor?>
+		</div>
+		
+		<br><br>
+		
+	<?php for($i=0;$i<=7;$i++) :?>
+	   <div class="col-md-12" style= "background:#ffffff; border-radius: 5px;  border-style: solid;
+    border-width: 1px; margin-bottom: 10px; border-color: #D1D1D1">
+	
+	<div class="row">
+				<a><div class="col-sm-1">
+				<div class="input-group">
+				<h5>000000</h5>
+				</div>
+				</div>
+				
+				
+				<div class="col-sm-4">
+				<div class="input-group">
+				<h5>studyObject Name</h5>
+				</div>
+				</div></a>
+				
+				
+				<div class="col-sm-2">
+				<div class="input-group">
+				<h5>DOB:</h5>
+				</div>
+				</div> 
+				
+				<div class="col-sm-2">
+				<div class="input-group">
+				<h5>DOD:</h5>
+				</div>
+				</div>
+				
+				<div class="col-sm-2">
+				<div class="input-group">
+				<h5>CT Scan Date:</h5>
+				</div>
+				</div>
+				
+				<div class="col-sm-1">
+				<div class="input-group">
+				<button class="btn btn-link">View</button>
+				</div>
+				</div>
+				
+	</div>
+	</div>
+	<?php endfor?>
+	
+	
+	
+		
+
+		
+		
+		
+				
+				
+				
+				
+				<!--<div class="row">
+				<div class="col-sm-2">
+				<div class="input-group">
+				<h4>Height:</h4>
+				</div>
+				</div>
+				
+				<div class="col-sm-6">
+				<div class="input-group">
+				<h4>Weight:</h4>
+				</div>
+				</div>
+				</div>
+				
+				<div class="row">
+				<div class="col-sm-2">
+				<div class="input-group">
+				<h4>DOB:</h4>
+				</div>
+				</div>
+				
+				<div class="col-sm-6">
+				<div class="input-group">
+				<h4>DOD:</h4>
+				</div>
+				</div>
+				</div>
+				
+				<div class="row">
+				<div class="col-sm-4">
+				<div class="input-group">
+				<h4>Cause:</h4>
+				</div>
+				</div>
+
+		</div>-->
+	
+		
+
+
 </div>
+
 
 </body>
 
