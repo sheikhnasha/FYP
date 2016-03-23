@@ -70,23 +70,19 @@
 				</div>
 			
 				</div>
-				
+				<br>
 				<div class="row">
-				<div class="col-sm-3">
-				<div class="input-group">
-				
-				</div>
-				</div>			
+					
 
 			<div class="col-sm-5">
 				<div class="input-group">
-				<button class="btn btn-link">Profile</button>
+				<button class="btn btn-default" style="height:30px; width: 230px;"><small>Profile</small></button>
 				</div>
 				</div>
 			
 				</div>
 				
-				
+				<br>
 				
 				</div>
 		</div>
@@ -101,7 +97,7 @@
     border-width: 1px; margin-bottom: 10px; border-color: #D1D1D1">
 	
 	<div class="row">
-				<a><div class="col-sm-1">
+				<a style="cursor:pointer"><div class="col-sm-1">
 				<div class="input-group">
 				<h5>000000</h5>
 				</div>
@@ -135,7 +131,7 @@
 				
 				<div class="col-sm-1">
 				<div class="input-group">
-				<button class="btn btn-link">View</button>
+				<button class="btn btn-default">Profile</button>
 				</div>
 				</div>
 				
