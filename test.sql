@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2016 at 08:10 AM
+-- Generation Time: Mar 23, 2016 at 10:16 PM
 -- Server version: 10.1.8-MariaDB
 -- PHP Version: 5.6.14
 
@@ -57,18 +57,11 @@ CREATE TABLE `ctimages` (
 --
 
 INSERT INTO `ctimages` (`CTScanID`, `CTImageID`, `directory`) VALUES
-(3, 1, 'DICOM/3/IM-'),
-(3, 2, 'DICOM/3/IM-'),
-(3, 3, 'DICOM/3/IM-'),
-(3, 4, 'DICOM/3/IM-'),
-(3, 5, 'DICOM/3/IM-'),
-(4, 6, 'DICOM/4/IM-'),
-(4, 7, 'DICOM/4/IM-'),
-(4, 8, 'DICOM/4/IM-'),
-(4, 9, 'DICOM/4/IM-'),
-(4, 10, 'DICOM/4/IM-'),
-(4, 11, 'DICOM/4/IM-'),
-(4, 12, 'DICOM/4/IM-');
+(2, 1, 'DICOM/2/IM-'),
+(2, 2, 'DICOM/2/IM-'),
+(2, 3, 'DICOM/2/IM-'),
+(2, 4, 'DICOM/2/IM-'),
+(2, 5, 'DICOM/2/IM-');
 
 -- --------------------------------------------------------
 
@@ -88,10 +81,7 @@ CREATE TABLE `ctscan` (
 --
 
 INSERT INTO `ctscan` (`CTScanID`, `date`, `time`, `objectID`) VALUES
-(1, '2016-03-21', '08:00:00', 4),
-(2, '2015-03-20', '19:25:00', 5),
-(3, '2010-02-02', '17:00:00', 6),
-(4, '2016-03-03', '18:15:00', 7);
+(2, '2016-03-23', '09:11:00', 10);
 
 -- --------------------------------------------------------
 
@@ -161,13 +151,7 @@ CREATE TABLE `study` (
 --
 
 INSERT INTO `study` (`studyID`, `objectID`, `referreeID`, `referreeType`) VALUES
-(1, 1, 1, ''),
-(2, 2, 2, ''),
-(3, 3, 4, ''),
-(4, 4, 2, ''),
-(5, 5, 3, ''),
-(6, 6, 1, ''),
-(7, 7, 5, '');
+(2, 10, 1, '');
 
 -- --------------------------------------------------------
 
@@ -177,8 +161,8 @@ INSERT INTO `study` (`studyID`, `objectID`, `referreeID`, `referreeType`) VALUES
 
 CREATE TABLE `studyobject` (
   `objectID` int(11) NOT NULL,
-  `firstName` varchar(255) NOT NULL,
-  `surName` varchar(255) NOT NULL,
+  `objectFirstname` varchar(255) NOT NULL,
+  `objectSurname` varchar(255) NOT NULL,
   `ICNumber` int(11) NOT NULL,
   `telephone` int(11) NOT NULL,
   `DOB` date NOT NULL,
@@ -196,14 +180,8 @@ CREATE TABLE `studyobject` (
 -- Dumping data for table `studyobject`
 --
 
-INSERT INTO `studyobject` (`objectID`, `firstName`, `surName`, `ICNumber`, `telephone`, `DOB`, `Sex`, `height`, `weight`, `homeAddress`, `homeCity`, `homeState`, `DOD`, `deathCause`) VALUES
-(1, 'Mirza', 'Ghulam', 4446616, 5851213, '1991-09-26', 'Male', 160, 75, 'House 21, Street 11', 'Wahinwalla', 'Selengor', '2016-03-18', 'Killed by an ant'),
-(2, 'Mustafa', 'Kamal', 4449969, 5842559, '1965-02-25', 'Male', 158, 85, 'Some House, Some Street', 'Same', 'Same', '2016-03-01', 'jumped of a chair'),
-(3, 'Samsung', 'Korea', 11166611, 111222333, '1991-09-24', 'Male', 144, 54, 'IDK shouse, IDK street', 'Seekh', 'Seekh', '2011-01-10', 'Shot by Apple'),
-(4, 'Nameagain', 'Hatethis', 9876541, 5858585, '1996-05-24', 'Female', 321, 58, 'Middle Of no Where', 'TooMuch', 'TooMuch', '2006-12-11', 'Knockout by the cieling fan'),
-(5, 'Nargis', 'Shah', 5851213, 90078601, '1988-02-09', 'Female', 156, 45, 'Near my house', 'MyState', 'MyState', '2016-03-20', 'looked to much into the Mirror'),
-(6, 'Fantastic', 'Work', 1113393, 1234567, '1972-02-01', 'Female', 180, 100, '99 House', 'noState', 'noState', '2014-01-28', 'Had no where to go'),
-(7, 'Jessica ', 'Alba', 5555555, 66699988, '1880-02-03', 'Female', 169, 68, 'Alba Street', 'Newstate', 'Newstate', '2016-03-01', 'Too Old');
+INSERT INTO `studyobject` (`objectID`, `objectFirstname`, `objectSurname`, `ICNumber`, `telephone`, `DOB`, `Sex`, `height`, `weight`, `homeAddress`, `homeCity`, `homeState`, `DOD`, `deathCause`) VALUES
+(10, 'Shoaib', 'Akhtar', 1113393, 90078601, '2010-03-23', 'Male', 80, 20, 'Middle of no where', 'Selengor', 'Selengor', '2016-03-22', 'Knocked by a car');
 
 -- --------------------------------------------------------
 
@@ -214,7 +192,7 @@ INSERT INTO `studyobject` (`objectID`, `firstName`, `surName`, `ICNumber`, `tele
 CREATE TABLE `surgeries` (
   `surgeryID` int(11) NOT NULL,
   `surgeryName` varchar(255) NOT NULL,
-  `telephone` varchar(30) NOT NULL,
+  `surgeryTelephone` varchar(30) NOT NULL,
   `surgeryAddress` varchar(255) NOT NULL,
   `surgeryState` varchar(255) NOT NULL,
   `surgeryCountry` varchar(255) NOT NULL
@@ -224,7 +202,7 @@ CREATE TABLE `surgeries` (
 -- Dumping data for table `surgeries`
 --
 
-INSERT INTO `surgeries` (`surgeryID`, `surgeryName`, `telephone`, `surgeryAddress`, `surgeryState`, `surgeryCountry`) VALUES
+INSERT INTO `surgeries` (`surgeryID`, `surgeryName`, `surgeryTelephone`, `surgeryAddress`, `surgeryState`, `surgeryCountry`) VALUES
 (1, 'UK', ' +44 (0) 115 951 5151', 'University Park', 'Nottingham ', 'UK');
 
 --
@@ -295,17 +273,17 @@ ALTER TABLE `surgeries`
 -- AUTO_INCREMENT for table `administrators`
 --
 ALTER TABLE `administrators`
-  MODIFY `administratorsID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `administratorsID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `ctimages`
 --
 ALTER TABLE `ctimages`
-  MODIFY `CTImageID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `CTImageID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `ctscan`
 --
 ALTER TABLE `ctscan`
-  MODIFY `CTScanID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `CTScanID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `login`
 --
@@ -320,12 +298,12 @@ ALTER TABLE `referees`
 -- AUTO_INCREMENT for table `study`
 --
 ALTER TABLE `study`
-  MODIFY `studyID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `studyID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `studyobject`
 --
 ALTER TABLE `studyobject`
-  MODIFY `objectID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `objectID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `surgeries`
 --
