@@ -17,23 +17,26 @@
 <body>
 	<div class="navBar">
 		<?php 
-		include 'navBar.php';?>
+		include 'navBar.php';
+		$add=$_GET['add'];?>
 	</div>
 
+
 	<div class="container">
-							
+			<form class="well form-horizontal" method="post" action="object_update.php?add=<?php echo $add;?>" enctype="multipart/form-data">
+				
 				<div class="row">
 					<div class="col-lg-6">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">First Name</span>
-							<input type="text" name="objectFN"  class="form-control" id="disabledInput" style="cursor:default;" value="<?php echo $objectfName; ?>" disabled>
+							<input type="text" name="objectFN"  class="form-control" value="<?php echo $objectfName; ?>">
 						</div>
 					</div>
 					
 					<div class = "col-lg-6">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon3">Surname</span>
-							<input type="text" name="objectSN" class="form-control" placeholder="Enter Deceased Surname"  id="disabledInput" style="cursor:default;" value="<?php echo $objectsName; ?>" disabled>
+							<input type="text" name="objectSN" class="form-control" placeholder="Enter Deceased Surname"    value="<?php echo $objectsName; ?>" >
 						</div>
 					</div>
 				</div>
@@ -44,21 +47,21 @@
 					<div class="col-lg-4">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">IC Number</span>
-							<input type="number"  name="objectIC" class="form-control" placeholder="Enter Deceased IC Number" id="disabledInput" style="cursor:default;" value="<?php echo $objectIC; ?>" disabled>
+							<input type="number"  name="objectIC" class="form-control" placeholder="Enter Deceased IC Number"   value="<?php echo $objectIC; ?>" >
 						</div>
 					</div>
 					
 					<div class="col-lg-4">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">Tel</span>
-							<input type="number" name="objectTel" class="form-control" id="disabledInput" style="cursor:default;" value="<?php echo $objectTEL; ?>" disabled>
+							<input type="number" name="objectTel" class="form-control"   value="<?php echo $objectTEL; ?>" >
 						</div>
 					</div>
 					
 					<div class="col-lg-4">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">Date of Birth</span>
-							<input type="date" name="objectDOB" class="form-control" id="disabledInput" style="cursor:default;" value="<?php echo $objectDOB; ?>" disabled>
+							<input type="date" name="objectDOB" class="form-control"   value="<?php echo $objectDOB; ?>" >
 						</div>
 					</div>
 				</div>
@@ -70,7 +73,10 @@
 					
 					<div class="input-group">
 						<span class="input-group-addon" id="basic-addon2">Sex</span>
-							<input class="form-control" id="sel1" name="objectSex" id="disabledInput" style="cursor:default;" value="<?php echo $objectSEX; ?>" disabled>
+								<select class="form-control" id="sel1" name="objectSex" required>
+							<option><?php echo $objectSEX; ?></option>
+							<option><?php if ($objectSEX=="Male"){echo 'Female';}else{echo 'Male';}?></option>
+							</select>
 							
 						<br>
 					</div>
@@ -78,13 +84,13 @@
 					<div class="col-lg-4">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">Height</span>
-							<input type="text" name="objectHeight" class="form-control" id="disabledInput" style="cursor:default;" value="<?php echo $objectHeight; ?>  cm" disabled>
+							<input type="text" name="objectHeight" class="form-control"   value="<?php echo $objectHeight; ?>  cm" >
 						</div>
 					</div>
 					<div class="col-lg-4">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">Weight</span>
-							<input type="text" name="objectWeight" class="form-control" id="disabledInput" style="cursor:default;" value="<?php echo $objectWeight; ?>  kg" disabled>
+							<input type="text" name="objectWeight" class="form-control"   value="<?php echo $objectWeight; ?>  kg" >
 						</div>
 					</div>
 				</div>
@@ -95,7 +101,7 @@
 					<div class="col-lg-12">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">Address</span>
-							<input type="text" name="objectAdd" class="form-control"id="disabledInput" style="cursor:default;" value="<?php echo $objectAddress; ?>" disabled>
+							<input type="text" name="objectAdd" class="form-control"  value="<?php echo $objectAddress; ?>" >
 						</div>
 					</div>
 				</div>
@@ -106,13 +112,13 @@
 					<div class="col-lg-6">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">City</span>
-							<input type="text" name="objectCity" class="form-control" id="disabledInput" style="cursor:default;" value="<?php echo $objectCity; ?>" disabled>
+							<input type="text" name="objectCity" class="form-control"   value="<?php echo $objectCity; ?>" >
 						</div>
 					</div>
 					<div class="col-lg-6">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">State</span>
-							<input type="text" name="objectState" class="form-control "id="disabledInput" style="cursor:default;" value="<?php echo $objectState; ?>" disabled >
+							<input type="text" name="objectState" class="form-control "  value="<?php echo $objectState; ?>"  >
 						</div>
 					</div>
 				</div>
@@ -123,13 +129,13 @@
 					<div class="col-lg-4">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">Date of Death</span>
-							<input type="date" name="objectDOD" class="form-control" id="disabledInput" style="cursor:default;" value="<?php echo $objectDOD; ?>" disabled >
+							<input type="date" name="objectDOD" class="form-control"   value="<?php echo $objectDOD; ?>"  >
 						</div>
 					</div>
 					<div class="col-lg-8">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">Cause of Death</span>
-							<input type="text" name="objectCause" class="form-control" placeholder="Enter The Cause Of Deceased's Death" id="disabledInput" style="cursor:default;" value="<?php echo $objectCause; ?>" disabled >
+							<input type="text" name="objectCause" class="form-control" placeholder="Enter The Cause Of Deceased's Death"   value="<?php echo $objectCause; ?>"  >
 						</div>
 					</div>
 				</div>
@@ -139,20 +145,24 @@
 					<br>
 				<?php
 					include ('conn.php');
-					$sql = "SELECT * FROM referees";
+					$sql = "SELECT * FROM referees WHERE referreeID != $RefID";
 					$result = $conn->query($sql);
 					?>
 					<div class="row">
-					<div class="col-lg-6">
+						<div class="col-lg-6">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">Referree's ID</span>
-								<input type="text" class="form-control" id="disabledInput" style="cursor:default;" value="<?php echo $RefID . " - " . $Reffname; ?>" disabled>
+								<select class="form-control" id="refID" name="refID" required>
+							<option><?php echo $RefID . " - " . $Reffname;?></option>
+							<?php while($row = $result->fetch_assoc()):?>
+							<option><?php echo $row['referreeID'] ." - ". $row['firstName'] ;?></option>
+							<?php endwhile;?>
 							</select>
 						</div>
 					</div>
 					
 					
-					<div class = "col-lg-6">
+						<div class = "col-lg-6">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon3">Surname</span>
 							<input type="text" name="refSN" class="form-control" id="disabledInput" style="cursor:default;" value="<?php echo $Refsname; ?>" disabled >
@@ -186,14 +196,14 @@
 					<div class="col-lg-6">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">CT SCAN Date</span>
-							<input type="date" name="CTDate" class="form-control" id="disabledInput" style="cursor:default;" value="<?php echo $scanDate; ?>" disabled>
+							<input type="date" name="CTDate" class="form-control"   value="<?php echo $scanDate; ?>" >
 						</div>
 					</div>
 			
 					<div class="col-lg-6">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">CT SCAN Time</span>
-							<input type="time" name="CTTime" class="form-control"id="disabledInput" style="cursor:default;" value="<?php echo $scanTime; ?>" disabled>
+							<input type="time" name="CTTime" class="form-control"  value="<?php echo $scanTime; ?>" >
 						</div>
 					</div>
 				</div>
@@ -217,10 +227,10 @@
 					<div class='row'>
 						<div class="col-lg-2">
 						</div>
-						<a href="editProfile.php?add=<?php echo $_GET['add'];?>"><button  type="button" value="Upload Image" name="Submit" class="btn btn-default" style="width: 320px; height: 40px">Edit</button></a> 
-						<button  type="button" class="btn btn-danger" style="width: 320px; margin-left: 100px; height: 40px">Delete</button> 
+						<button  type="submit" value="Upload Image" name="Submit" class="btn btn-success" style="width: 320px; height: 40px">Update</button> 
+						<button  type="button" class="btn btn-danger" style="width: 320px; margin-left: 100px; height: 40px">Reset</button> 
 					</div>
-					
+					</form>
 					
 	</div>
 	

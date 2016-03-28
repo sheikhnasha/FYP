@@ -19,7 +19,8 @@
 <div class="navBar">
 <?php
 $include = "home";
- include 'navBar.php';?>
+ include 'navBar.php';
+ ?>
   </div>
 </nav>
 </div>
@@ -91,115 +92,53 @@ $include = "home";
 		</div>
 		<?php endfor?>
 		</div>-->
-		
-		<br><br>
-		
-	<?php
-	$sql = ("SELECT * FROM studyobject INNER JOIN ctscan ON studyobject.`objectID`=ctscan.`objectID` ORDER BY `ctscan`.`date` DESC ");
-	$result = $conn->query($sql);
-	if ($result->num_rows > 0) :
-	while($row = $result->fetch_assoc()) :
+<?php
+	if( $_SESSION['user_type'] == 'admin'):
+	
 	?>
-	   <div class="col-md-12" style= "background:#ffffff; border-radius: 5px;  border-style: solid;
-    border-width: 1px; margin-bottom: 10px; border-color: #D1D1D1">
 	
-	<div class="row">
-				<a style="cursor:pointer"><div class="col-sm-1">
-				<div class="input-group">
-				<h5><?php echo $row['objectID'];?></h5>
-				</div>
-				</div>
-				
-				
-				<div class="col-sm-4">
-				<div class="input-group">
-				<h5><?php echo $row['objectFirstname'] ." ". $row['objectSurname'];?></h5>
-				</div>
-				</div></a>
-				
-				
-				<div class="col-sm-2">
-				<div class="input-group">
-				<h5>DOB: <?php echo $row['DOB'] ?></h5>
-				</div>
-				</div> 
-				
-				<div class="col-sm-2">
-				<div class="input-group">
-				<h5>DOD: <?php echo $row['DOD']?></h5>
-				</div>
-				</div>
-				
-				<div class="col-sm-2">
-				<div class="input-group">
-				<h5>CT Scan : <?php echo $row['date']?></h5>
-				</div>
-				</div>
-				
-				<div class="col-sm-1">
-				<div class="input-group">
-				<a href="studyProfile.php?add=<?php echo $row['objectID'];?>"><button class="btn btn-default">Profile</button></a>
-				</div>
-				</div>
-				
-	</div>
-	</div>
-	<?php endwhile;
-	else :?>
-	<h3> No Record Found!<h3>
-	<?php endif;?>
+	<?php 
 	
-	
-	
+	 $sql= ("SELECT DISTINCT study.`referreeID`, `firstName`, `surName` FROM referees 
+		 INNER JOIN study ON referees.`referreeID`=study.`referreeID` 
+		 ORDER BY `referees`.`firstName` ASC  ");
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) :
+		while ($row = $result->fetch_assoc()):
+		$fName = $row['firstName'];
+		$sName = $row['surName'];
+		$id = $row['referreeID'];
+		?>
 		
+		<h3><?php	echo $fName ." " .$sName?> </h3>
+	<?php
+	$sql_bar = ("SELECT * FROM studyobject 
+	INNER JOIN ctscan ON studyobject.`objectID`=ctscan.`objectID` 
+	INNER JOIN study ON ctscan.`objectID` = study.`objectID` 
+	WHERE referreeID = $id
+	ORDER BY `ctscan`.`date` DESC ");
+		 
+		 include 'bar.php';
+		?>
+		<?php
+		endwhile;
+		endif;
+		
+	
+		else:
+		$sql_bar=("SELECT * FROM studyobject 
+		INNER JOIN study ON studyobject.objectID = study.objectID 
+		INNER JOIN ctscan ON studyobject.`objectID`=ctscan.`objectID` 
+		WHERE study.referreeID = '$referreeID' 
+		ORDER BY `ctscan`.`date` DESC"); 
+		
+		include 'bar.php';
+		endif;
+		?>
+	
 
-		
-		
-		
-				
-				
-				
-				
-				<!--<div class="row">
-				<div class="col-sm-2">
-				<div class="input-group">
-				<h4>Height:</h4>
-				</div>
-				</div>
-				
-				<div class="col-sm-6">
-				<div class="input-group">
-				<h4>Weight:</h4>
-				</div>
-				</div>
-				</div>
-				
-				<div class="row">
-				<div class="col-sm-2">
-				<div class="input-group">
-				<h4>DOB:</h4>
-				</div>
-				</div>
-				
-				<div class="col-sm-6">
-				<div class="input-group">
-				<h4>DOD:</h4>
-				</div>
-				</div>
-				</div>
-				
-				<div class="row">
-				<div class="col-sm-4">
-				<div class="input-group">
-				<h4>Cause:</h4>
-				</div>
-				</div>
-
-		</div>-->
 	
-		
-
-
+	
 </div>
 
 

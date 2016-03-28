@@ -19,11 +19,9 @@
 		include 'navBar.php';?>
 	</div>
 
-<br>
-<br>	
 
 	<div class="container">
-			<form class="well form-horizontal" method="post" action="studyback.php" enctype="multipart/form-data">
+			<form class="well form-horizontal" method="post" action="object_add.php" enctype="multipart/form-data">
 				
 				<div class="row">
 					<div class="col-lg-6">
