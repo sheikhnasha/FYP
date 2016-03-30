@@ -210,20 +210,24 @@
 				</div>
 				
 				<br>
-				<!--
+				
 				<div class="row">
 				<div class="col-lg-12">
             <div class="input-group">
                 <span class="input-group-btn">
                     <span class="btn btn-primary btn-file">
-                        Browse&hellip; <input type="file" name="juice[]" multiple required>
+                        Browse&hellip; <input type="file" name="juice[]" multiple>
                     </span>
                 </span>
                 <input type="text" class="form-control" readonly>
             </div>
 				</div>
 					</div>
-					<br>-->
+					<br>
+					
+					
+					
+					
 					
 				<div class="col-md-12" style= "background:#ffffff; border-radius: 5px;  border-style: solid;
     border-width: 1px; margin-bottom: 10px; border-color: #D1D1D1" id="show_button">
@@ -254,9 +258,23 @@
 				</div>
 				
 	</div>
-	<div class="row" id="images" hidden>
+	
+	
+	
+	</div>
+	
+	
+		
+				<div class="col-md-12" style= "background:#ffffff; border-radius: 5px;  border-style: solid;
+    border-width: 1px; margin-bottom: 10px; border-color: #D1D1D1"  id="images" hidden>
+	<br>
+		
+	<br>
+	
+	<div class="row">
 					<?php while($row_image = $result_image -> fetch_assoc()):
 					$dir = $row_image['directory'];
+					$imgid=$row_image['CTImageID'];
 					$img = strlen($dir);
 					for($i=0; $i<$img; $i++){
 						if($dir[$i]=="/"){
@@ -267,15 +285,30 @@
 					?>
 					<div class="col-lg-4" style="margin-bottom:5px;">
 						<div class="input-group">
-							<span class="input-group-addon" id="basic-addon2"><input type="checkbox"></span>
-							<input type="text" name="objectAdd" class="form-control"id="disabledInput" style="cursor:default;" value="<?php for($j=$name; $j<$img; $j++){echo $dir[$j];} ?>" >
+							<span class="input-group-addon" id="basic-addon2"><input name = "checkfile[]" value="<?php echo $imgid; ?>" type="checkbox"></span>
+							<input type="text" class="form-control"id="disabledInput" style="cursor:default;" value="<?php for($j=$name; $j<$img; $j++){echo $dir[$j];} ?>" >
 						</div>
 					</div>
 					<?php endwhile;?>
 				</div>
+				
+				<br>
+				
+					<div class="row" >
 	
-	
+				<div class="col-sm-5">
+				</div>
+				<div class="col-sm-5">
+				<div class="input-group">
+				<button type="submit" name= "delFile" class="btn btn-danger">Delete</button>
+				</div>
+				</div>
+				</div>
+				<br>
+				
+			
 	</div>
+
 					
 					
 				
@@ -285,8 +318,8 @@
 					<div class='row'>
 						<div class="col-lg-2">
 						</div>
-						<button  type="submit" value="Upload Image" name="Submit" class="btn btn-success" style="width: 320px; height: 40px">Update</button> 
-						<button  type="button" class="btn btn-danger" style="width: 320px; margin-left: 100px; height: 40px">Reset</button> 
+						<button  type="submit" value="Upload Image" name="updateAll" class="btn btn-success" style="width: 320px; height: 40px">Update</button> 
+						<a href="studyProfile.php?add=<?php echo $add; ?>"><button  type="button" class="btn btn-danger" style="width: 320px; margin-left: 100px; height: 40px">Cancel</button></a> 
 					</div>
 					
 					

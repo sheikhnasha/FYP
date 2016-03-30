@@ -6,7 +6,6 @@
 	
 			
 			include ('POST_study.php');
-
 			
 						// Create connection
 			include ('conn.php');
@@ -45,13 +44,11 @@
 			$target_dir = "DICOM/$ScanID/";
 			$target_file = $target_dir . basename($_FILES["juice"]["name"][$i]);
 			$uploadOk = 1;
-
 			// Check if file already exists
 			if (file_exists($target_file)) {
 			//  echo "Sorry, file already exists.";
 			$uploadOk = 0;
 			}
-
 			// Check if $uploadOk is set to 0 by an error
 			if ($uploadOk == 0) {
 			//  echo "Sorry, your file was not uploaded.";

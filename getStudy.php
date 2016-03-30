@@ -42,7 +42,7 @@ WHERE studyobject.objectID = $_GET[add]");
 			$scanTime=$row['time'];
 			$scanID=$row['CTScanID'];
 			
-			$sql_image="SELECT * FROM `ctimages` WHERE `CTScanID` = $scanID ORDER BY `ctimages`.`CTImageID` ASC ";
+			$sql_image="SELECT * FROM `ctimages` WHERE `CTScanID` = $scanID ORDER BY `ctimages`.`directory` ASC  ";
 			$result_image = $conn->query($sql_image);
 			
 			$rowcount=mysqli_num_rows($result_image);

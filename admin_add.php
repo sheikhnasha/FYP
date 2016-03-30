@@ -21,8 +21,7 @@
 			
 			$sql_admin = "INSERT INTO `login`(`userID`, `Email`, `Password`, `userType`) 
 			VALUES (NULL,'$adminEmail','$adminPass','admin')";
-			$result_admin = $conn->query($sql_admin);
-			if (mysqli_query($conn, $sql_admin)) {
+			if ($conn->query($sql_admin) === TRUE) {
 			$last_id = $conn->insert_id;
 			$sql1 = "INSERT INTO `administrators`(`administratorsID`, `userID`, `firstName`, `surName`) 
 			VALUES (NULL,$last_id,'$adminFN','$adminSN')";

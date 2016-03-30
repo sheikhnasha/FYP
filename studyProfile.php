@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <?php include ('session.php');?>
 <?php include ('getStudy.php');?>
 <html lang="en">
@@ -222,7 +223,7 @@
 					<div class="col-lg-12">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">Image Files</span>
-							<input type="text" name="objectAdd" class="form-control"id="disabledInput" style="cursor:default;" value="<?php echo $rowcount . " files available." ?>" disabled>
+							<input type="text" class="form-control"id="disabledInput" style="cursor:default;" value="<?php echo $rowcount . " files available." ?>" disabled>
 						</div>
 					</div>
 				</div>
