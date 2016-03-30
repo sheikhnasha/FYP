@@ -11,6 +11,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="js/input.js"></script>
+  <script src="js/hide_show.js"></script>
   <!--http://www.abeautifulsite.net/whipping-file-inputs-into-shape-with-bootstrap-3/-->
 </head>
 
@@ -223,6 +224,63 @@
 				</div>
 					</div>
 					<br>-->
+					
+				<div class="col-md-12" style= "background:#ffffff; border-radius: 5px;  border-style: solid;
+    border-width: 1px; margin-bottom: 10px; border-color: #D1D1D1" id="show_button">
+	
+	<div class="row" >
+	
+				<div class="col-sm-5">
+				</div>
+				<div class="col-sm-5">
+				<div class="input-group">
+				<button type="button"  onclick="show()" class="btn btn-link"><h5><?php echo $rowcount . " files available.";?></h5></button>
+				</div>
+				</div>
+				
+	</div>
+	</div>
+	<div class="col-md-12" style= "background:#ffffff; border-radius: 5px;  border-style: solid;
+    border-width: 1px; margin-bottom: 10px; border-color: #D1D1D1" id="hide_button" hidden>
+	
+	<div class="row" >
+	
+				<div class="col-sm-5">
+				</div>
+				<div class="col-sm-5">
+				<div class="input-group">
+				<button type="button"  onclick="hide()" class="btn btn-link"><h5>Cancel</h5></button>
+				</div>
+				</div>
+				
+	</div>
+	<div class="row" id="images" hidden>
+					<?php while($row_image = $result_image -> fetch_assoc()):
+					$dir = $row_image['directory'];
+					$img = strlen($dir);
+					for($i=0; $i<$img; $i++){
+						if($dir[$i]=="/"){
+							$name=$i+1;
+						}
+					}
+				
+					?>
+					<div class="col-lg-4" style="margin-bottom:5px;">
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon2"><input type="checkbox"></span>
+							<input type="text" name="objectAdd" class="form-control"id="disabledInput" style="cursor:default;" value="<?php for($j=$name; $j<$img; $j++){echo $dir[$j];} ?>" >
+						</div>
+					</div>
+					<?php endwhile;?>
+				</div>
+	
+	
+	</div>
+					
+					
+				
+				<br>
+					
 					<br>
 					<div class='row'>
 						<div class="col-lg-2">
@@ -230,6 +288,9 @@
 						<button  type="submit" value="Upload Image" name="Submit" class="btn btn-success" style="width: 320px; height: 40px">Update</button> 
 						<button  type="button" class="btn btn-danger" style="width: 320px; margin-left: 100px; height: 40px">Reset</button> 
 					</div>
+					
+					
+					
 					</form>
 					
 	</div>

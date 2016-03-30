@@ -16,6 +16,9 @@ INNER JOIN surgeries
 ON referees.surgeryID = surgeries.surgeryID
 WHERE studyobject.objectID = $_GET[add]");
 			$result = $conn->query($sql);
+			
+			
+			
 			$row = $result->fetch_assoc();
 			$objectfName=$row['objectFirstname'];
 			$objectsName=$row['objectSurname'];
@@ -37,6 +40,13 @@ WHERE studyobject.objectID = $_GET[add]");
 			
 			$scanDate=$row['date'];
 			$scanTime=$row['time'];
+			$scanID=$row['CTScanID'];
+			
+			$sql_image="SELECT * FROM `ctimages` WHERE `CTScanID` = $scanID ORDER BY `ctimages`.`CTImageID` ASC ";
+			$result_image = $conn->query($sql_image);
+			
+			$rowcount=mysqli_num_rows($result_image);
+			
 	
 			
 			?>

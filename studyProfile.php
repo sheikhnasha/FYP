@@ -213,6 +213,21 @@
 				</div>
 					</div>
 					<br>-->
+					<?php
+					
+						
+					?>
+					
+					<div class="row">
+					<div class="col-lg-12">
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon2">Image Files</span>
+							<input type="text" name="objectAdd" class="form-control"id="disabledInput" style="cursor:default;" value="<?php echo $rowcount . " files available." ?>" disabled>
+						</div>
+					</div>
+				</div>
+			<br>
+					
 					<br>
 					<div class='row'>
 						<div class="col-lg-2">
@@ -223,6 +238,8 @@
 					
 					
 	</div>
+	
+
 	
 	<br>
 				
