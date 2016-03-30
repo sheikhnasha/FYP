@@ -12,7 +12,7 @@ include ('getUsername.php');
     <ul class="nav navbar-nav">
       <li class="<?php if ($include=="home"){echo 'active';}?>"><a href="home.php">Home</a></li>
       <li class="<?php if ($include=="newPatient"){echo 'active';}?>"><a href="newStudy.php">New Study</a></li>
-	  <li class="<?php if ($include=="newSurgery"){echo 'active';}?>"><a href="newStudy.php">New Surgery</a></li>
+	  <li class="<?php if ($include=="admin"){echo 'active';}?>"><a href="Admin.php">Administrator</a></li>
 
     </ul>
 	      <ul class="nav navbar-nav navbar-right">

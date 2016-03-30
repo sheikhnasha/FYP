@@ -218,7 +218,7 @@
 						<div class="col-lg-2">
 						</div>
 						<a href="editProfile.php?add=<?php echo $_GET['add'];?>"><button  type="button" value="Upload Image" name="Submit" class="btn btn-default" style="width: 320px; height: 40px">Edit</button></a> 
-						<button  type="button" class="btn btn-danger" style="width: 320px; margin-left: 100px; height: 40px">Delete</button> 
+						<a href="object_del.php?add=<?php echo $_GET['add'];?>"><button  type="button" class="btn btn-danger" style="width: 320px; margin-left: 100px; height: 40px">Delete</button> </a>
 					</div>
 					
 					
