@@ -1,14 +1,20 @@
-				
-				function hide() {
-				document.getElementById("see_edit").style.display = "none"; 
-				document.getElementById("edit_button").style.display = "initial"; 
-				document.getElementById("hide_button").style.display = "none"; 
-				}
-				
-				
-				
-				function show() {
-				document.getElementById("see_edit").style.display = "initial"; 
-				document.getElementById("edit_button").style.display = "none"; 
-				document.getElementById("hide_button").style.display = "initial"; 
-				}
+$(document).ready(function(){
+    $("#show_button").click(function(){
+        $("#images").slideDown();
+    });
+});
+$(document).ready(function(){
+    $("#hide_button").click(function(){
+        $("#images").slideUp();
+    });
+});
+
+function show() {
+    document.getElementById("show_button").style.display = "none";
+    document.getElementById("hide_button").style.display = "initial";
+}
+
+function hide() {
+    document.getElementById("show_button").style.display = "initial";
+	 document.getElementById("hide_button").style.display = "none";
+}
