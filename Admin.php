@@ -123,12 +123,49 @@
 				</div>
 				</div>
 				
+				
+				
 	</div>
+	<div style="display:none;">
+	<br>
 	
+	<div class="row">
+					<div class="col-lg-6">
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon2">First Name</span>
+							<input type="text" name="adminFN" class="form-control" placeholder="Enter New Administraor First Name" required>
+						</div>
+					</div>
+					
+					<div class = "col-lg-6">
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon3">Surname</span>
+							<input type="text" name="adminSN" class="form-control" placeholder="Enter New Administraor Surname"  required>
+						</div>
+					</div>
+				</div>
+				
+				<br>
+				
+	
+			
+				
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon2">Email Address</span>
+							<input type="email" name="adminEmail" class="form-control" placeholder="Enter Email Address" required>
+						</div>
+					</div>
+					
+				</div>
+				
+				<br>
 	
 			
 
 	
+	</div>
 	</div>
 	
 					

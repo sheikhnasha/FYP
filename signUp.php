@@ -53,18 +53,7 @@
 							</div>
 				</div>
 				
-								 <div class="form-group">
-								 <div class="col-sm-12">
-							<label for="sel1">Surgery:</label>
-							<select class="form-control" id="sel1" name="signSurgery">
-							<option>UK</option>
-							<option>Malaysia</option>
-							<option>China</option>
-							</select>
-							</div>
-						<br>
-          </div>
-				
+												
 				<br>
 				<div class="form-group">
 					<div class="col-sm-8">

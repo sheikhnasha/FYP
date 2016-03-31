@@ -11,10 +11,10 @@ include ('getUsername.php');
     </div>
     <ul class="nav navbar-nav">
       <li class="<?php if ($include=="home"){echo 'active';}?>"><a href="home.php">Home</a></li>
-<?php if( $_SESSION['user_type'] == 'admin'):?>     
-	 <li class="<?php if ($include=="newPatient"){echo 'active';}?>"><a href="newStudy.php">New Study</a></li>
-
-	  <li class="<?php if ($include=="admin"){echo 'active';}?>"><a href="Admin.php">Administrator</a></li>
+  
+	 <li class="<?php if ($include=="newPatient"){echo 'active';}?>"><a href="studyNew.php">New Study</a></li>
+	 <?php if( $_SESSION['user_type'] == 'admin'):?>   
+	<li class="<?php if ($include=="admin"){echo 'active';}?>"><a href="Admin.php">Administrator</a></li>
 <?php endif; ?>
     </ul>
 	      <ul class="nav navbar-nav navbar-right">

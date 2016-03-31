@@ -26,72 +26,7 @@ $include = "home";
 </div>
   
 <div class=" well container">
-  		<!--<div class="row">
-		
-		<?php for($i=0;$i<=7;$i++) :?>
-				<div class="col-sm-3">
-				<div class="input-group">   
-		 
-	   <div class="col-sm-12" style= "background:#ffffff; border-radius: 5px;  border-style: solid;
-    border-width: 1px; margin-bottom: 30px; border-color: #D1D1D1">
-
-		
-				<a><div class="row">
-				<div class="col-sm-3">
-				<div class="input-group">
-				<h5>000000</h5>
-				</div>
-				</div>
-				
-				
-				<div class="col-sm-8">
-				<div class="input-group">
-				<h5>studyObject Name</h5>
-				</div>
-				</div>
-				</div></a>
-				<div class="row">
-				<div class="col-sm-6">
-				<div class="input-group">
-				<small style="font-size:75%;">DOB: 22-9-1991</small>
-				</div>
-				</div>
-				
-				
-				<div class="col-sm-6">
-				<div class="input-group">
-				<small style="font-size:75%;">DOD: 22-9-1991</small>
-				</div>
-				</div>
-				</div>
-				
-				<div class="row">
-				<div class="col-sm-12">
-				<div class="input-group">
-				<small style="font-size:75%;">CT Scan Date: 22-9-1991</small>
-				</div>
-				</div>
-			
-				</div>
-				<br>
-				<div class="row">
-					
-
-			<div class="col-sm-5">
-				<div class="input-group">
-				<button class="btn btn-default" style="height:30px; width: 230px;"><small>Profile</small></button>
-				</div>
-				</div>
-			
-				</div>
-				
-				<br>
-				
-				</div>
-		</div>
-		</div>
-		<?php endfor?>
-		</div>-->
+  		
 <?php
 	if( $_SESSION['user_type'] == 'admin'):
 	
@@ -118,7 +53,7 @@ $include = "home";
 	WHERE referreeID = $id
 	ORDER BY `ctscan`.`date` DESC ");
 		 
-		 include 'bar.php';
+		 include 'home_profile.php';
 		?>
 		<?php
 		endwhile;
@@ -132,7 +67,7 @@ $include = "home";
 		WHERE study.referreeID = '$referreeID' 
 		ORDER BY `ctscan`.`date` DESC"); 
 		
-		include 'bar.php';
+		include 'home_profile.php';
 		endif;
 		?>
 	
