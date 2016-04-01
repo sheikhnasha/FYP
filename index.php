@@ -55,7 +55,7 @@ if(isset ($_SESSION['login_user'])){
 		
 		</div>
 		<br>
-		<div class="container" style="width : 420px; border-style: solid; border-width: 2px; border-color: #D1D1D1; border-radius: 3px;;">
+		<div class="container" style="width : 420px; border-style: solid; border-width: 2px; border-color: #D1D1D1; border-radius: 3px;">
 		<br>
 		<div class="form-group">
 					<div class="col-sm-offset-3 col-sm-8">

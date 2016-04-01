@@ -16,7 +16,10 @@ include ('getUsername.php');
 	 <?php if( $_SESSION['user_type'] == 'admin'):?>   
 	<li class="<?php if ($include=="admin"){echo 'active';}?>"><a href="Admin.php">Administrator</a></li>
 <?php endif; ?>
-    </ul>
+<?php if( $_SESSION['user_type'] != 'admin'):?>   
+	<li class="<?php if ($include=="forum"){echo 'active';}?>"><a href="forum.php">Forum</a></li>
+<?php endif?>    
+	</ul>
 	      <ul class="nav navbar-nav navbar-right">
 				<li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><?php echo" " .$fName." " .$sName;?>  <span class="caret"></span></a>
 					 <ul class="dropdown-menu">

@@ -1,3 +1,5 @@
+<script src="js/hide_show.js"></script>
+
 <?php
 $result_bar = $conn->query($sql_bar);
 	if ($result_bar->num_rows > 0) :
@@ -14,18 +16,13 @@ $result_bar = $conn->query($sql_bar);
 				</div>
 				
 				
-				<div class="col-sm-4">
+				<div class="col-sm-3">
 				<div class="input-group">
 				<h5><?php echo $row_bar['objectFirstname'] ." ". $row_bar['objectSurname'];?></h5>
 				</div>
 				</div></a>
 				
 				
-				<div class="col-sm-2">
-				<div class="input-group">
-				<h5>DOB: <?php echo $row_bar['DOB'] ?></h5>
-				</div>
-				</div> 
 				
 				<div class="col-sm-2">
 				<div class="input-group">
@@ -39,14 +36,26 @@ $result_bar = $conn->query($sql_bar);
 				</div>
 				</div>
 				
+				<div class="col-sm-2">
+				</div> 
+				
 				<div class="col-sm-1">
 				<div class="input-group">
 				<a href="studyProfile.php?add=<?php echo $row_bar['objectID'];?>"><button class="btn btn-default">Profile</button></a>
 				</div>
 				</div>
 				
+				<div class="col-sm-1">
+				<div class="input-group">
+				<button class="btn btn-primary" id="btn_show"  onclick="show()">Share</button></a>
+				</div>
+				</div> 
+				
 	</div>
 	</div>
+	
+	
+
 	
 	
 	

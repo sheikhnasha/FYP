@@ -15,7 +15,7 @@
 
 </head>
 
-<body>
+<body id="fullBody">
 <div class="navBar">
 <?php
 $include = "home";
@@ -78,6 +78,59 @@ $include = "home";
 
 
 </body>
+
+  <div class="container" id="pop_share" style="width : 450px; position: absolute; top: 50%; left: 50%; margin-top: -100px;margin-left: -250px; border:solid 2px #D1D1D1; border-radius: 3px; display:none">
+	   
+		<form class="form-horizontal" method="post" action="">
+		
+					<?php
+					include ('conn.php');
+					$sql = "SELECT * FROM referees WHERE referreeID != $referreeID";
+					$result = $conn->query($sql);
+					?>
+					<br>
+					
+						<div class="form-group">
+						
+					<div class="col-lg-12">
+								<select class="form-control" id="refID" name="refID" required>
+							<option value="">Select a referee:</option>
+							<?php while($row = $result->fetch_assoc()):?>
+							<option><?php echo $row['referreeID'] ." - ". $row['firstName'] . " " . $row['surName'];?></option>
+							<?php endwhile;?>
+							</select>
+						</div>
+					</div>
+					
+				
+				</br>
+				<div class="form-group">
+					
+						<div class="col-sm-12">
+							<textarea rows="5"  style="resize: none;" name = "message" class="form-control" id="inputPassword3" placeholder="Type Your Message Here."></textarea>
+						</div>
+				</div>
+				
+				<br>
+    
+				<div class="row">
+				
+					<div class="col-sm-6">
+				<div class="input-group">
+						<button type="submit" class="btn btn-default" style="color:blue; width:190px; height: 40px;">Share</button>
+					</div>
+				</div>
+				
+					<div class="col-sm-6">
+				<div class="input-group">
+						<button type="submit" class="btn btn-danger" id="btn_hidePOP" onclick="hide()" style="width:190px; height: 40px;">Cancel</button>
+					</div>
+				</div>
+				</div>
+				<br>
+			</form>
+		
+		</div>
 
 </body>
 </html>
