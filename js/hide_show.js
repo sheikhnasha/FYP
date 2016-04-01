@@ -10,11 +10,11 @@ $(document).ready(function(){
 });
 
 function show() {
-    document.getElementById("show_button").style.display = "none";
-    document.getElementById("hide_button").style.display = "initial";
+    //document.getElementById("btn_button").style.display = "none";
+    document.getElementById("pop_share").style.display = "initial";
 }
 
 function hide() {
-    document.getElementById("show_button").style.display = "initial";
-	 document.getElementById("hide_button").style.display = "none";
+    //document.getElementById("show_button").style.display = "initial";
+	 document.getElementById("pop_share").style.display = "none";
 }
