@@ -107,7 +107,7 @@ $include = "home";
 				<div class="form-group">
 					
 						<div class="col-sm-12">
-							<textarea rows="5"  style="resize: none;" name = "message" class="form-control" id="inputPassword3" placeholder="Type Your Message Here."></textarea>
+							<textarea rows="5"  style="resize: none;" name = "message" class="form-control" id="inputPassword3" placeholder="Type Your Message Here." required></textarea>
 						</div>
 				</div>
 				
@@ -123,7 +123,7 @@ $include = "home";
 				
 					<div class="col-sm-6">
 				<div class="input-group">
-						<button type="submit" class="btn btn-danger" id="btn_hidePOP" onclick="hide()" style="width:190px; height: 40px;">Cancel</button>
+						<button type="button" class="btn btn-danger" name="" id="btn_hidePOP" onclick="hide()" style="width:190px; height: 40px;">Cancel</button>
 					</div>
 				</div>
 				</div>

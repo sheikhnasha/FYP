@@ -47,7 +47,7 @@ $result_bar = $conn->query($sql_bar);
 				
 				<div class="col-sm-1">
 				<div class="input-group">
-				<button class="btn btn-primary" id="btn_show"  onclick="show()">Share</button></a>
+				<a href="#?obID=<?php echo $row_bar['objectID'];?>"><button class="btn btn-primary" id="btn_show" onclick="show()">Share</button></a>
 				</div>
 				</div> 
 				
