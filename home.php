@@ -80,8 +80,11 @@ $include = "home";
 </body>
 
   <div class="container" id="pop_share" style="width : 450px; position: absolute; top: 50%; left: 50%; margin-top: -100px;margin-left: -250px; border:solid 2px #D1D1D1; border-radius: 3px; display:none">
-	   
-		<form class="form-horizontal" method="post" action="">
+	        
+	   		<?php
+			$forumobID="#";
+			$forumobID=$_GET['obID']; ?>
+		<form class="form-horizontal" method="post" action="forum_add.php?obID=<?php echo $forumobID?>">
 		
 					<?php
 					include ('conn.php');
@@ -96,7 +99,7 @@ $include = "home";
 								<select class="form-control" id="refID" name="refID" required>
 							<option value="">Select a referee:</option>
 							<?php while($row = $result->fetch_assoc()):?>
-							<option><?php echo $row['referreeID'] ." - ". $row['firstName'] . " " . $row['surName'];?></option>
+							<option value="<?php echo $row['referreeID']?>"><?php echo $row['referreeID'] ." - ". $row['firstName'] . " " . $row['surName'];?></option>
 							<?php endwhile;?>
 							</select>
 						</div>

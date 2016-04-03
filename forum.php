@@ -1,19 +1,12 @@
 
 
-
-
-  
-
-
-	
-
-	
-
-
 </body>
 </html>
 <!DOCTYPE html>
-<?php include ('session.php');?>
+<?php include ('session.php');
+include ('forum_get.php');
+
+?>
 
 
 <html lang="en">
@@ -63,23 +56,64 @@ $include = "forum";
   
     <div id="container">
 
-
-        <br/>
         <!--Vertical Tab-->
         <div id="parentVerticalTab">
 		<div class="seif" >
             <ul class="resp-tabs-list hor_1" style="width:200px;">
-                <?php for($i=0; $i<=4; $i++):?><li>Vertical <?php echo $i;?></li><?php endfor ?>
+                <?php while ($row_forumGET = $result_forumGET->fetch_assoc()):?><li><?php echo $row_forumGET['firstName'] . " " . $row_forumGET['surName'] ;?></li><?php endwhile ?>
            
             </ul>
 			</div>
-            <div class="resp-tabs-container hor_1">
-                <div>
-                    Lorem ipsum dolor sit amet, lerisque commodo. Nam porta cursus lectusconsectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales sce. Proin nunc erat, gravida a facilisis quis, ornare id lectus.
-                    <br>
-                    <br>
-                    <p>Tab 1 Container</p>
-                </div>
+            <div class="resp-tabs-container hor_1" style="height:200px; overflow-x:hidden; overflow-y: scroll;">
+				<div>
+                
+	
+				<div class="col-md-12 well"style= "width: 45.5%; position: fixed; right: 313px; top:95px; border-bottom: solid 2px #D1D1D1;  z-index: 1;">
+				<a href = "viewer.php?ct=<?php echo $row_bar['CTScanID'];?>" style="cursor:pointer"><div class="col-sm-1">
+				<div class="input-group">
+				<h5>123</h5>
+				</div>
+				</div>
+				
+				
+				<div class="col-sm-6">
+				<div class="input-group">
+				<h5>Firstname SurName</h5>
+				</div>
+				</div></a>
+				
+				
+				<div class="col-sm-3">
+				<div class="input-group">
+				<h5>CT Scan :  02/12/16</h5>
+				</div>
+				</div>
+				
+				
+				
+				<div class="col-sm-1">
+				<div class="input-group">
+				<a href="studyProfile.php?add=<?php echo $row_bar['objectID'];?>"><button class="btn btn-default">Profile</button></a>
+				</div>
+				</div>
+				
+				
+				</div>
+	
+	<div class="row" style="position:relative; top: 60px; ">
+				<?php for($i=0; $i<=50; $i++):?>
+				
+				<h5 style="text-align: left; position: relative; left:10px; color: maroon; ">Hello</h5>
+				
+				
+				<h5 style="text-align: right; position: relative; right:10px; color: #960 ;">Hello</h5>
+				<?php endfor; ?>
+	</div>
+	
+	
+	</div>
+	
+	
                 <div>
                     Lorem consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis.
                     <br>
@@ -106,6 +140,13 @@ $include = "forum";
                 </div>
             </div>
         </div>
+		
+		<div class="form-group" style="width:71.6%; position: relative; left:200px; top:20px" >
+				<br>
+					<div class="col-sm-12">						
+							<textarea rows="1" style="resize: none;" name="email" required class="form-control" id="exampleInputAmount" placeholder="Message"></textarea>
+				</div>
+	
       
 
         <br>
