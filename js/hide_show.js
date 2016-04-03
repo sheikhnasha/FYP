@@ -10,6 +10,7 @@ $(document).ready(function(){
 });
 
 function show() {
+	
     //document.getElementById("btn_button").style.display = "none";
     document.getElementById("pop_share").style.display = "initial";
 }
