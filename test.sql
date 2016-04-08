@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2016 at 09:54 PM
+-- Generation Time: Apr 08, 2016 at 02:59 AM
 -- Server version: 10.1.8-MariaDB
 -- PHP Version: 5.6.14
 
@@ -495,6 +495,14 @@ CREATE TABLE `forum` (
   `referreeID_minor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `forum`
+--
+
+INSERT INTO `forum` (`forumID`, `objectID`, `referreeID_super`, `referreeID_minor`) VALUES
+(1, 1, 1, 4),
+(2, 1, 1, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -507,8 +515,15 @@ CREATE TABLE `forumdiscussion` (
   `message` text NOT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
-  `referreeType` int(11) NOT NULL
+  `referreeType` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `forumdiscussion`
+--
+
+INSERT INTO `forumdiscussion` (`messageID`, `forumID`, `message`, `date`, `time`, `referreeType`) VALUES
+(1, 1, 'Hi!', '2016-04-01', '09:15:00', 'major');
 
 -- --------------------------------------------------------
 
@@ -735,12 +750,12 @@ ALTER TABLE `ctscan`
 -- AUTO_INCREMENT for table `forum`
 --
 ALTER TABLE `forum`
-  MODIFY `forumID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `forumID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `forumdiscussion`
 --
 ALTER TABLE `forumdiscussion`
-  MODIFY `messageID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `messageID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `login`
 --
@@ -795,6 +810,12 @@ ALTER TABLE `forum`
   ADD CONSTRAINT `forum_ibfk_1` FOREIGN KEY (`objectID`) REFERENCES `studyobject` (`objectID`),
   ADD CONSTRAINT `forum_ibfk_2` FOREIGN KEY (`referreeID_super`) REFERENCES `referees` (`referreeID`),
   ADD CONSTRAINT `forum_ibfk_3` FOREIGN KEY (`referreeID_minor`) REFERENCES `referees` (`referreeID`);
+
+--
+-- Constraints for table `forumdiscussion`
+--
+ALTER TABLE `forumdiscussion`
+  ADD CONSTRAINT `forumdiscussion_ibfk_1` FOREIGN KEY (`forumID`) REFERENCES `forum` (`forumID`);
 
 --
 -- Constraints for table `referees`
