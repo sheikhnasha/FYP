@@ -17,19 +17,7 @@
 	   
 		<form class="well form-horizontal" method="post" action="signUpback.php">
 		
-		<div class="row">
-					<div class="col-lg-6">
-						<div class="input-group">
-							<input type="text"  name="signFN" class="form-control" placeholder="First Name" required>
-						</div>
-					</div>
-					
-					<div class = "col-lg-6">
-						<div class="input-group">
-							<input type="text" name="signSN" class="form-control" placeholder="Surname" required>
-						</div>
-					</div>
-				</div>
+
 		
 							
 				<div class="form-group">
@@ -41,23 +29,11 @@
 					</div>
 				</div>
 				
-				<div class="form-group">
-						<div class="col-sm-12">
-							<input type="password" name = "signPass" class="form-control" id="inputPassword1" placeholder="New Password" required>
-							</div>
-				</div>
-				<div class="form-group">
-						<div class="col-sm-12">
-							<input type="password" name = "signRePass" class="form-control" id="inputPassword2" onchange="checkPass();" placeholder="Re-type Password" required>
-													
-							</div>
-				</div>
-				
-												
+											
 				<br>
 				<div class="form-group">
 					<div class="col-sm-8">
-						<button id="myBtn" type="submit" class="btn btn-primary" style="width:380px; height: 40px;">Sign Up</button>
+						<button id="myBtn" type="submit" class="btn btn-primary" style="width:380px; height: 40px;">Reset Password</button>
 					</div>
 				</div>
 				

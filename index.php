@@ -18,10 +18,11 @@ if(isset ($_SESSION['login_user'])){
 </head>
 	   
 	   <body>
-	
-	   <br><br><br><br><br><br><br>
-	   <div class="container" style="width : 450px;">
+		
+	   <img src="LOGO/logo.png" alt="LOGO" style=" display: block; margin-left: auto; margin-right: auto; height:25%; width:25%">
 	   
+	   <div class="container" style="width : 450px;">
+	   <br>
 		<form class="well form-horizontal" method="post" action="login.php">
 		
 					<div class="form-group">
@@ -42,7 +43,7 @@ if(isset ($_SESSION['login_user'])){
   
 				<div class="form-group">
 					<div class="col-sm-8">
-							<button type="button" class="btn btn-link">Forgot Password?</button>
+							<a href="forgot_password.php"><button type="button" class="btn btn-link">Forgot Password?</button></a>
 					</div>
 				</div>
   

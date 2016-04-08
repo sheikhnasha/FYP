@@ -7,7 +7,7 @@ include ('getUsername.php');
 <nav class= "navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="home.php">Cloudgraphy</a>
+      <a class="navbar-brand" href="home.php">WebGraphy</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="<?php if ($include=="home"){echo 'active';}?>"><a href="home.php">Home</a></li>

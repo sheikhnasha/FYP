@@ -60,7 +60,18 @@ $include = "forum";
         <div id="parentVerticalTab">
 		<div class="seif" >
             <ul class="resp-tabs-list hor_1" style="width:200px;">
-                <?php while ($row_forumGET = $result_forumGET->fetch_assoc()):?><li><?php echo $row_forumGET['firstName'] . " " . $row_forumGET['surName'] ;?></li><?php endwhile ?>
+                <?php while ($row_forumGET = $result_forumGET->fetch_assoc()):
+				$minorID=$row_forumGET['referreeID_minor'];
+				$majorID=$row_forumGET['referreeID_super'];
+				if ($minorID==$referreeID):
+				
+				$sql_superGET="SELECT * FROM `referees` WHERE referreeID=$majorID";
+				$result_superGET = $conn -> query($sql_superGET);
+				$row_forumGET = $result_superGET->fetch_assoc();
+				endif;
+				?>
+				
+				<li><?php echo $row_forumGET['firstName'] . " " . $row_forumGET['surName'] ;?></li><?php endwhile ?>
            
             </ul>
 			</div>
@@ -103,7 +114,7 @@ $include = "forum";
 	<div class="row" style="position:relative; top: 60px; ">
 				<?php for($i=0; $i<=50; $i++):?>
 				
-				<h5 style="text-align: left; position: relative; left:10px; color: maroon; ">Hello</h5>
+				<h5 style="text-align: left; position: relative; left:10px; color: maroon; "><?php echo 'Hello' ?></h5>
 				
 				
 				<h5 style="text-align: right; position: relative; right:10px; color: #960 ;">Hello</h5>

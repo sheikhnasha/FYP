@@ -22,6 +22,11 @@ $result_bar = $conn->query($sql_bar);
 				</div>
 				</div></a>
 				
+				<?php if( $_SESSION['user_type'] == 'admin'):?>  
+				<div class="col-sm-1">
+				</div>
+				<?php endif; ?>
+				
 				
 				
 				<div class="col-sm-2">
@@ -44,12 +49,13 @@ $result_bar = $conn->query($sql_bar);
 				<a href="studyProfile.php?add=<?php echo $row_bar['objectID'];?>"><button class="btn btn-default">Profile</button></a>
 				</div>
 				</div>
-				
+					 <?php if( $_SESSION['user_type'] != 'admin'):?>   
 				<div class="col-sm-1">
 				<div class="input-group">
 				<a href="?obID=<?php echo $row_bar['objectID'];?>#"><button class="btn btn-primary" id="btn_show" onclick="show()">Share</button></a>
 				</div>
 				</div> 
+				<?php endif; ?>
 				
 	</div>
 	</div>
