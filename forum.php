@@ -63,40 +63,51 @@ $include = "forum";
                 <?php while ($row_forumGET = $result_forumGET->fetch_assoc()):
 				$minorID=$row_forumGET['referreeID_minor'];
 				$majorID=$row_forumGET['referreeID_super'];
-				if ($minorID==$referreeID):
+				$forumID=$row_forumGET['forumID'];
+				$dateTIME = getTime($forumID);
 				
+				if ($minorID==$referreeID):
 				$sql_superGET="SELECT * FROM `referees` WHERE referreeID=$majorID";
 				$result_superGET = $conn -> query($sql_superGET);
 				$row_forumGET = $result_superGET->fetch_assoc();
 				endif;
+				
 				?>
 				
-				<li><?php echo $row_forumGET['firstName'] . " " . $row_forumGET['surName'] ;?></li><?php endwhile ?>
+				<li><?php  echo $row_forumGET['firstName'] . " " . $row_forumGET['surName'] ;?> <br><small><?php echo $dateTIME;?></small></li><?php endwhile;  ?>
            
             </ul>
 			</div>
             <div class="resp-tabs-container hor_1" style="height:200px; overflow-x:hidden; overflow-y: scroll;">
+				
+				<?php  $result_getStudy = getStudy($referreeID);
+						while ($row_getStudy  = $result_getStudy->fetch_assoc()):
+						$forumID=$row_getStudy['forumID'];
+						$majorID=$row_getStudy['referreeID_super'];
+						$minorID=$row_getStudy['referreeID_minor'];
+				
+						
+				?>
 				<div>
                 
-	
 				<div class="col-md-12 well"style= "width: 45.5%; position: fixed; right: 313px; top:95px; border-bottom: solid 2px #D1D1D1;  z-index: 1;">
-				<a href = "viewer.php?ct=<?php echo $row_bar['CTScanID'];?>" style="cursor:pointer"><div class="col-sm-1">
+				<a href = "viewer.php?ct=<?php echo $row_getStudy['CTScanID'];?>" style="cursor:pointer"><div class="col-sm-1">
 				<div class="input-group">
-				<h5>123</h5>
+				<h5><?php echo $row_getStudy['objectID'];?></h5>
 				</div>
 				</div>
 				
 				
-				<div class="col-sm-6">
+				<div class="col-sm-5">
 				<div class="input-group">
-				<h5>Firstname SurName</h5>
+				<h5><?php echo $row_getStudy['objectFirstname'] . " " . $row_getStudy['objectSurname'];;?></h5>
 				</div>
 				</div></a>
 				
 				
-				<div class="col-sm-3">
+				<div class="col-sm-4">
 				<div class="input-group">
-				<h5>CT Scan :  02/12/16</h5>
+				<h5>CT Scan : <?php echo $row_getStudy['date']; ?></h5>
 				</div>
 				</div>
 				
@@ -104,7 +115,7 @@ $include = "forum";
 				
 				<div class="col-sm-1">
 				<div class="input-group">
-				<a href="studyProfile.php?add=<?php echo $row_bar['objectID'];?>"><button class="btn btn-default">Profile</button></a>
+				<a href="studyProfile.php?add=<?php echo $row_getStudy['objectID'];?>"><button class="btn btn-default">Profile</button></a>
 				</div>
 				</div>
 				
@@ -112,61 +123,67 @@ $include = "forum";
 				</div>
 	
 	<div class="row" style="position:relative; top: 60px; ">
-				<?php for($i=0; $i<=50; $i++):?>
+		
+				<?php $result_Message = getMessage($forumID); 
+				while ($row_Message  = $result_Message->fetch_assoc()):
+				if(($row_Message['referreeType'] == 'major') && ($majorID == $referreeID) || ($row_Message['referreeType'] == '') && ($minorID == $referreeID)) :
+				?>
 				
-				<h5 style="text-align: left; position: relative; left:10px; color: maroon; "><?php echo 'Hello' ?></h5>
+				<h5 style="text-align: left; position: relative; left:10px; color: maroon; "><?php echo $row_Message['message']; ?><br><small><?php echo $row_Message['dateTIME']?></small></h5>
+				<?php else : ?>
 				
+				<h5 style="text-align: right; position: relative; right:10px; color: #960 ;"><?php echo $row_Message['message']; ?><br><small><?php echo $row_Message['dateTIME']?></small></h5>
 				
-				<h5 style="text-align: right; position: relative; right:10px; color: #960 ;">Hello</h5>
-				<?php endfor; ?>
+				<?php endif; ?>
+				<?php endwhile; ?>
 	</div>
 	
+	  <?php if($majorID == $referreeID){
+	 $refTYPE="major";
+	 }
+	 else{
+	 $refTYPE="";
+	 }
+	 
+	 ?>
+	
+	
+	<form class="form-horizontal" method="post" action="msg_add.php?ID=<?php echo $forumID?>&TYPE=<?php echo $refTYPE?>">
+		
+ <div class="row" style="position:fixed; right:233px; top:560px; width:71.5%; z-index: 1;">
+			
+  <div class="col-lg-3">
+    
+  </div>
+  <div class="col-lg-8">
+    <div class="input-group">
+      <textarea style="resize: none;" rows="1" type="text" name="message" class="form-control" placeholder="Message...." required></textarea>
+   
+	 <span class="input-group-btn">
+       <button class="btn btn-primary" name="send" type="submit">Send</button></a>
+      </span>
+
+	  </div><!-- /input-group -->
+  </div>
+</div><!-- /.row -->
+
+</form>	
+	
 	
 	</div>
-	
-	
-                <div>
-                    Lorem consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis.
-                    <br>
-                    <br>
-                    <p>Tab 2 Container</p>
-                </div>
-                <div>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.
-                    <br>
-                    <br>
-                    <p>Tab 3 Container</p>
-                </div> 
-				<div>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.
-                    <br>
-                    <br>
-                    <p>Tab 4 Container</p>
-                </div>
-				<div>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.
-                    <br>
-                    <br>
-                    <p>Tab 5 Container</p>
-                </div>
+	<?php endwhile; ?>
+		
             </div>
+			
+		
+	
+			
         </div>
 		
-		<div class="form-group" style="width:71.6%; position: relative; left:200px; top:20px" >
-				<br>
-					<div class="col-sm-12">						
-							<textarea rows="1" style="resize: none;" name="email" required class="form-control" id="exampleInputAmount" placeholder="Message"></textarea>
-				</div>
-	
-      
-
-        <br>
-        <br>
-        <br/>
-  
-
-        
-    </div>
+		
+			
+		
+			
 	
 	<!--Plug-in Initialisation-->
 	<script type="text/javascript">

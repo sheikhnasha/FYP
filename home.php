@@ -110,7 +110,7 @@ $include = "home";
 				<div class="form-group">
 					
 						<div class="col-sm-12">
-							<textarea rows="5"  style="resize: none;" name = "message" class="form-control" id="inputPassword3" placeholder="Type Your Message Here." required></textarea>
+							<textarea rows="5" style="resize: none;" name = "message" class="form-control" id="inputPassword3" placeholder="Type Your Message Here." required></textarea>
 						</div>
 				</div>
 				
@@ -120,7 +120,7 @@ $include = "home";
 				
 					<div class="col-sm-6">
 				<div class="input-group">
-						<button type="submit" class="btn btn-default" style="color:blue; width:190px; height: 40px;">Share</button>
+						<button type="submit" name="share" class="btn btn-default" style="color:blue; width:190px; height: 40px;">Share</button>
 					</div>
 				</div>
 				
