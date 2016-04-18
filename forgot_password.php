@@ -12,7 +12,8 @@
 	   
 	   <body>
 	
-	   <img src="LOGO/logo.png" alt="LOGO" style=" display: block; margin-left: auto; margin-right: auto; height:25%; width:25%"> <br/>
+	  <img src="LOGO/logo.png" class="img-responsive" alt="LOGO" style=" display: block; margin-left: auto; margin-right: auto;">
+		<br/>
 	   <div class="container" style="width : 450px;">
 	   
 		<form class="well form-horizontal" method="post" action="signUpback.php">

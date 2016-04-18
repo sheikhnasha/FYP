@@ -1,11 +1,15 @@
 $(document).ready(function(){
     $("#show_button").click(function(){
         $("#images").slideDown();
+		$("#show_button").hide();
+		$("#hide_button").show();
     });
 });
 $(document).ready(function(){
     $("#hide_button").click(function(){
         $("#images").slideUp();
+		$("#hide_button").hide();
+		$("#show_button").show();
     });
 });
 

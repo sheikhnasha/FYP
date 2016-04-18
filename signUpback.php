@@ -39,7 +39,7 @@
 			}
 			$sql3 = "INSERT INTO `referees` (`referreeID`, `userID`, `firstName`, `surName`, `surgeryID`) VALUES (NULL, '$userID', '$signFN', '$signSN', '$surgeryID')";
 			$result = $conn->query($sql3);
-			header('Location: signSuccess.php');
+			header('Location: index.php');
 			
 			?>
 

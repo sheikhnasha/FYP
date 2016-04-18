@@ -45,14 +45,14 @@
 					<div class="col-lg-4">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">IC Number</span>
-							<input type="number"  name="objectIC" class="form-control" placeholder="Enter Deceased IC Number" required>
+							<input type="number"  name="objectIC" class="form-control" placeholder="Enter Deceased IC Number" min="100" required>
 						</div>
 					</div>
 					
 					<div class="col-lg-4">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">Tel</span>
-							<input type="number" name="objectTel" class="form-control" placeholder="Enter Deceased Telephone">
+							<input type="number" name="objectTel" class="form-control"  min="100" placeholder="Enter Deceased Telephone">
 						</div>
 					</div>
 					
@@ -82,13 +82,13 @@
 					<div class="col-lg-4">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">Height</span>
-							<input type="number" name="objectHeight" class="form-control" placeholder="cm" min="0">
+							<input type="number" name="objectHeight" class="form-control" placeholder="cm" min="1" required>
 						</div>
 					</div>
 					<div class="col-lg-4">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">Weight</span>
-							<input type="number" name="objectWeight" class="form-control" placeholder="kg" min="0">
+							<input type="number" name="objectWeight" class="form-control" placeholder="kg" min="1" required>
 						</div>
 					</div>
 				</div>
@@ -133,7 +133,7 @@
 					<div class="col-lg-8">
 						<div class="input-group">
 							<span class="input-group-addon" id="basic-addon2">Cause of Death</span>
-							<input type="text" name="objectCause" class="form-control" placeholder="Enter The Cause Of Deceased's Death" required>
+							<input type="text" name="objectCause" class="form-control" placeholder="Enter The Cause Of Deceased's Death">
 						</div>
 					</div>
 				</div>

@@ -3,6 +3,7 @@
 <body>
 
 	<?php
+			//POST Email and Password
 			$userEmail = $_POST['email']; 
 			$userPassword = $_POST['password'];
 			include ('conn.php'); 
@@ -10,12 +11,12 @@
 			$sql = "SELECT * FROM login WHERE Email = '$userEmail'";
 			$result = $conn->query($sql);
 			if ($result->num_rows > 0) {
-		// output data of each row
-		$row = $result->fetch_assoc();
-        $dataEmail = $row["Email"]; 
-		$dataPassword = $row["Password"];
-		$userType = $row["userType"];
-		$userID = $row["userID"];
+			// output data of each row
+			$row = $result->fetch_assoc();
+			$dataEmail = $row["Email"]; 
+			$dataPassword = $row["Password"];
+			$userType = $row["userType"];
+			$userID = $row["userID"];
 		
 		
 		if($dataEmail == $userEmail && $dataPassword == $userPassword) 

@@ -19,7 +19,7 @@ if(isset ($_SESSION['login_user'])){
 	   
 	   <body>
 		
-	   <img src="LOGO/logo.png" alt="LOGO" style=" display: block; margin-left: auto; margin-right: auto; height:25%; width:25%">
+	   <img src="LOGO/logo.png" class="img-responsive" alt="LOGO" style=" display: block; margin-left: auto; margin-right: auto;">
 	   
 	   <div class="container" style="width : 450px;">
 	   <br>
@@ -29,7 +29,7 @@ if(isset ($_SESSION['login_user'])){
 				<br>
 					<div class="col-sm-12">
 						
-							<input type="text" name="email" required class="form-control" id="exampleInputAmount" placeholder="Email">
+							<input type="email" name="email" required class="form-control" id="exampleInputAmount" placeholder="Email">
 					</div>
 				</div>
 				

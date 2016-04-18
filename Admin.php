@@ -62,7 +62,7 @@
 						<div class="col-lg-2">
 						</div>
 						<button  type="submit" value="Upload Image" name="Submit" class="btn btn-success" style="width: 320px; height: 40px">Add Administraor</button> 
-						<button  type="button" class="btn btn-danger" style="width: 320px; margin-left: 100px; height: 40px">Restart</button> 
+						<a href="admin.php"><button  type="button" class="btn btn-danger" style="width: 320px; margin-left: 100px; height: 40px">Restart</button></a> 
 					</div>
 					</form>
 					
@@ -95,7 +95,7 @@
 				</div>
 				
 				
-				<div class="col-sm-4">
+				<div class="col-sm-5">
 				<div class="input-group">
 				<h5><?php echo $row_admin['firstName']. " " . $row_admin['surName'];?></h5>
 				</div>
@@ -108,14 +108,14 @@
 				</div>
 				</div> 
 				
-				<div class="col-sm-1">
+				<!--<div class="col-sm-1">
 				<div class="input-group">
 				<button style="width:70px;" id="edit_button[<?php echo $id;?>]" class="btn btn-default" >Edit</button>
 				
 				</script>
 
 				</div>
-				</div>
+				</div>-->
 				
 				<div class="col-sm-1">
 				<div class="input-group">
@@ -126,7 +126,7 @@
 				
 				
 	</div>
-	<div style="display:none;">
+	<!--<div style="display:none;">
 	<br>
 	
 	<div class="row">
@@ -165,7 +165,7 @@
 			
 
 	
-	</div>
+	</div>-->
 	</div>
 	
 					

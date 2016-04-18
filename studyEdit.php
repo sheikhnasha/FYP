@@ -18,6 +18,7 @@
 <body>
 	<div class="navBar">
 		<?php 
+		$include ="";
 		include 'navBar.php';
 		$add=$_GET['add'];?>
 	</div>

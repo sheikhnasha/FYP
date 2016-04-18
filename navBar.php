@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php 
 include ('getUsername.php'); 
+
 ?>
 <html>
 
@@ -18,15 +19,61 @@ include ('getUsername.php');
 <?php endif; ?>
 <?php if( $_SESSION['user_type'] != 'admin'):?>   
 	<li class="<?php if ($include=="forum"){echo 'active';}?>"><a href="forum.php">Forum</a></li>
-<?php endif?>    
+<?php endif?> 
+
+	
+	
+	
+	
+	
+
 	</ul>
 	      <ul class="nav navbar-nav navbar-right">
+	
+
+	<?php 
+	if ($include=="home") :?>
+	
+	
+			<li>
+	
+	<div class="form-group">
+			
+					<div class="col-sm-12">
+						
+							<input style="margin-top:7px;" size="50" type="email" name="signEmail" class="form-control" placeholder="Search Study" required>
+														
+					</div>
+				</div>
+	
+	
+	</li>
+	
+			<li>
+	<div class="form-group">
+			
+					<div class="col-sm-6">
+						
+							 <button style="margin-top:7px; position: relative; right:25px" class="btn btn-default" type="button">Go!</button>
+														
+					</div>
+				</div>
+	
+	
+	</li>
+	
+	<?php endif; ?>
+	
+		
+		  
 				<li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><?php echo" " .$fName." " .$sName;?>  <span class="caret"></span></a>
 					 <ul class="dropdown-menu">
 					 <li><a href="#">Profile</a></li>
 					<li><a href="logout.php">Logout</a></li> 
 					</ul>
 				</li>
+				
+				
 		  </ul>
 		  </nav>
 		  </html>

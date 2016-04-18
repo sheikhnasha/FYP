@@ -24,8 +24,13 @@ $include = "home";
   </div>
 </nav>
 </div>
+  <div class="container">
+  				</div>
+					<br>
+				
   
 <div class=" well container">
+
   		
 <?php
 	if( $_SESSION['user_type'] == 'admin'):
@@ -45,7 +50,7 @@ $include = "home";
 		$id = $row['referreeID'];
 		?>
 		
-		<h3><?php	echo $fName ." " .$sName?> </h3>
+		<h3><?php	echo $id. " - ".$fName ." " .$sName?> </h3>
 	<?php
 	$sql_bar = ("SELECT * FROM studyobject 
 	INNER JOIN ctscan ON studyobject.`objectID`=ctscan.`objectID` 

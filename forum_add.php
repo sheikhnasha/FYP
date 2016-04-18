@@ -24,10 +24,7 @@
 			}
 			}
 			
-			if (isset($_POST['send'])){
-				header('Location:home.php');
 			
-				}
 			
 			//echo $forumobID;
 			//echo $forumMinor;

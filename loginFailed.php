@@ -18,6 +18,9 @@ if(isset ($_SESSION['login_user'])){
 	   <body>
 	   
 	   <br>
+	   <br>
+	   <br>
+	   <br>
 			<div class="container" style="width : 420px; border-style: solid; border-width: 2px; border-color: #C66; border-radius: 3px;;">
 		<br>
 		<div class="form-group">
