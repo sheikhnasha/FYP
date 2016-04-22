@@ -54,11 +54,11 @@ if(isset ($_SESSION['login_user'])){
 						</div>
 				</div>
   
-				<div class="form-group">
+				<!--<div class="form-group">
 					<div class="col-sm-8">
 							<button type="button" class="btn btn-link">Forgot Password?</button>
 					</div>
-				</div>
+				</div>-->
   
 				<div class="form-group">
 					<div class="col-sm-8">

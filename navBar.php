@@ -28,20 +28,20 @@ include ('getUsername.php');
 	
 
 	</ul>
+	<form method="post" action="search.php">
 	      <ul class="nav navbar-nav navbar-right">
 	
 
 	<?php 
-	if ($include=="home") :?>
-	
-	
+	if ($include=="home" || $include=="search") :?>
+
 			<li>
 	
 	<div class="form-group">
 			
 					<div class="col-sm-12">
 						
-							<input style="margin-top:7px;" size="50" type="email" name="signEmail" class="form-control" placeholder="Search Study" required>
+							<input style="margin-top:7px;" size="50" type="text" name="search" class="form-control" placeholder="Search Deceased First Name" required>
 														
 					</div>
 				</div>
@@ -54,26 +54,27 @@ include ('getUsername.php');
 			
 					<div class="col-sm-6">
 						
-							 <button style="margin-top:7px; position: relative; right:25px" class="btn btn-default" type="button">Go!</button>
+							 <button style="margin-top:7px; position: relative; right:25px" class="btn btn-default" type="submit">Go!</button>
 														
 					</div>
 				</div>
 	
 	
 	</li>
-	
+
 	<?php endif; ?>
 	
 		
 		  
 				<li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"></span><?php echo" " .$fName." " .$sName;?>  <span class="caret"></span></a>
 					 <ul class="dropdown-menu">
-					 <li><a href="#">Profile</a></li>
+					 
 					<li><a href="logout.php">Logout</a></li> 
 					</ul>
 				</li>
 				
 				
 		  </ul>
+		  </form>
 		  </nav>
 		  </html>

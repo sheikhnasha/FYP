@@ -19,6 +19,21 @@
 		include 'navBar.php';?>
 	</div>
 
+	<div class="container" style=" border-style: solid; border-width: 2px; border-color: #C66; border-radius: 5px;">
+		<br>
+		<div class="form-group">
+					<div class="col-sm-12">
+					
+						<p class="col-sm-offset-4" style="color: #C66;">The study have failed to register into the system<p>
+						<label class="col-sm-offset-5" style="color: #C66;">Please try again</label>
+						</div>
+				</div>
+				
+				</div>
+				<br>
+				<br>
+	
+	
 
 	<div class="container">
 			<form class="well form-horizontal" method="post" action="study_add.php" enctype="multipart/form-data">
@@ -212,7 +227,7 @@
 						<div class="col-lg-2">
 						</div>
 						<button  type="submit" value="Upload Image" name="Submit" class="btn btn-success" style="width: 320px; height: 40px">Add Study</button> 
-						<a href="studyNew.php"><button  type="button" class="btn btn-danger" style="width: 320px; margin-left: 100px; height: 40px">Restart</button><a/> 
+						<button  type="button" class="btn btn-danger" style="width: 320px; margin-left: 100px; height: 40px">Restart</button> 
 					</div>
 					</form>
 					

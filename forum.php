@@ -65,14 +65,17 @@ $include = "forum";
 				$majorID=$row_forumGET['referreeID_super'];
 				$forumID=$row_forumGET['forumID'];
 				$dateTIME = getTime($forumID);
-				
+	
 				if ($minorID==$referreeID):
 				$sql_superGET="SELECT * FROM `referees` WHERE referreeID=$majorID";
 				$result_superGET = $conn -> query($sql_superGET);
 				$row_forumGET = $result_superGET->fetch_assoc();
 				endif;
 				
+				
+				
 				?>
+				
 				
 				<li><?php  echo $row_forumGET['firstName'] . " " . $row_forumGET['surName'] ;?> <br><small><?php echo $dateTIME;?></small></li><?php endwhile;  ?>
            
@@ -90,8 +93,9 @@ $include = "forum";
 				?>
 				<div>
                 
-				<div class="col-md-12 well"style= "width: 45.5%; position: fixed; right: 313px; top:95px; border-bottom: solid 2px #D1D1D1;  z-index: 1;">
-				<a href = "viewer.php?ct=<?php echo $row_getStudy['CTScanID'];?>" style="cursor:pointer"><div class="col-sm-1">
+				<div class="col-md-12 well"style= "width: 40.7%; position: fixed; right: 391px; top:95px; border-bottom: solid 2px #D1D1D1;  z-index: 1;">
+				<a href = "viewer.php?ct=<?php echo $row_getStudy['CTScanID'];?>" style="cursor:pointer">
+				<div class="col-sm-1">
 				<div class="input-group">
 				<h5><?php echo $row_getStudy['objectID'];?></h5>
 				</div>
@@ -150,7 +154,7 @@ $include = "forum";
 	
 	<form class="form-horizontal" method="post" action="msg_add.php?ID=<?php echo $forumID?>&TYPE=<?php echo $refTYPE?>">
 		
- <div class="row" style="position:fixed; right:233px; top:560px; width:71.5%; z-index: 1;">
+ <div class="row" style="position:fixed; right:295px; top:620px; width:66%; z-index: 1;">
 			
   <div class="col-lg-3">
     

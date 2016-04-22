@@ -12,18 +12,20 @@
 			INNER JOIN forumdiscussion ON forum.forumID = forumdiscussion.forumID 
 			WHERE referreeID_super = '$referreeID' 
 			OR referreeID_minor = '$referreeID'
-			ORDER BY `forumdiscussion`.`dateTIME` ASC ";
+			ORDER BY `forumdiscussion`.`dateTIME` DESC ";
 			$result_forumGET= $conn -> query($sql_forumGET); 
 			
 			function getTime($ID){
 				include('conn.php');
 			$sql_dateTIMEGET= "SELECT * FROM `forumdiscussion` 
 			WHERE `forumID` = $ID 
-			ORDER BY `forumdiscussion`.`dateTIME` ASC ";
+			ORDER BY `forumdiscussion`.`dateTIME` DESC ";
 			$result_dateTIMEGET= $conn -> query($sql_dateTIMEGET); 
 			$row_dateTIMEGET = $result_dateTIMEGET->fetch_assoc();
 			return $row_dateTIMEGET['dateTIME'];
 			}
+			
+		
 			
 			function getStudy($refID){
 				include('conn.php');
@@ -34,7 +36,7 @@
 				INNER JOIN studyobject ON forum.objectID = studyobject.objectID 
 				INNER JOIN ctscan ON studyobject.objectID = ctscan.objectID 
 				WHERE referreeID_super = $refID OR referreeID_minor = $refID 
-				ORDER BY `forumdiscussion`.`dateTIME` ASC  ";
+				ORDER BY `forumdiscussion`.`dateTIME` DESC  ";
 				return  $conn -> query($sql_getStudy); 
 			}
 			

@@ -6,7 +6,7 @@
 
 
 <head>
-<title>Welcome 21st century cloudGraphy</title>
+<title>Search</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -18,8 +18,9 @@
 <body id="fullBody">
 <div class="navBar">
 <?php
-$include = "home";
+$include = "search";
  include 'navBar.php';
+ $query=$_POST['search'];
  ?>
   </div>
 </nav>
@@ -55,9 +56,9 @@ $include = "home";
 	$sql_bar = ("SELECT * FROM studyobject 
 	INNER JOIN ctscan ON studyobject.`objectID`=ctscan.`objectID` 
 	INNER JOIN study ON ctscan.`objectID` = study.`objectID` 
-	WHERE referreeID = '$id' 
+	WHERE referreeID = $id AND objectFirstname LIKE '$query%'
 	ORDER BY `ctscan`.`date` DESC ");
-	
+		 
 		 include 'home_profile.php';
 		?>
 		<?php
@@ -69,14 +70,15 @@ $include = "home";
 		$sql_bar=("SELECT * FROM studyobject 
 		INNER JOIN study ON studyobject.objectID = study.objectID 
 		INNER JOIN ctscan ON studyobject.`objectID`=ctscan.`objectID` 
-		WHERE study.referreeID = '$referreeID' 
-		ORDER BY `ctscan`.`date` DESC "); 
+		WHERE study.referreeID = '$referreeID' AND objectFirstname LIKE '$query%'
+		ORDER BY `ctscan`.`date` DESC"); 
+		
+		
 		
 		include 'home_profile.php';
 		endif;
 		?>
 	
-
 	
 	
 </div>

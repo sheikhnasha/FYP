@@ -25,9 +25,14 @@
 			$last_id = $conn->insert_id;
 			$sql1 = "INSERT INTO `administrators`(`administratorsID`, `userID`, `firstName`, `surName`) 
 			VALUES (NULL,$last_id,'$adminFN','$adminSN')";
-			$result1 = $conn->query($sql1);
-			header('Location: admin.php');
+			if ($conn->query($sql1) === TRUE) {
 			}
+			header('Location: admin_success.php');
+			}
+			else{
+				header('Location: admin_fail.php');
+			}
+				
 
 			
 			?>

@@ -6,32 +6,36 @@
 			
 						// Create connection
 			include ('conn.php');
-			
+			$success = 0;
 			
 			$sql = "INSERT INTO `studyobject` 
 			(`objectID`, `objectFirstname`, `objectSurname`, `ICNumber`, `telephone`, `DOB`, `Sex`, `height`, `weight`, `homeAddress`, `homeCity`, `homeState`, `DOD`, `deathCause`) 
 			VALUES (NULL, '$objectFN', '$objectSN', '$objectIC ', '$objectTel', '$objectDOB', '$objectSex', '$objectHeight', '$objectWeight', '$objectAdd', '$objectCity', '$objectState', '$objectDOD', '$objectCause');";
 			if ($conn->query($sql) === TRUE) {
 			$newID = $conn->insert_id;
+			$success = 1;
 			}
 			
-			$sql0 = "SELECT * FROM studyobject ORDER BY `studyobject`.`objectID` DESC "; 
-			$result = $conn->query($sql0);
-			$row = $result->fetch_assoc();
-			$newID=$row['objectID'];
 			
-					$sql1 = "INSERT INTO `study` (`studyID`, `objectID`, `referreeID`, `referreeType`) VALUES (NULL, '$newID', '$refID', '');";
-			$result = $conn->query($sql1);
+			$sql1 = "INSERT INTO `study` (`studyID`, `objectID`, `referreeID`) VALUES (NULL, '$newID', '$refID');";
+			if( $conn->query($sql1) === TRUE){
+			$success = 1;	
+			}
+			else{
+				$success = 0;
+			}
 			
 			
 			$sql_CTScan = "INSERT INTO `ctscan`(`CTScanID`, `date`, `time`, `objectID`) VALUES (NULL,'$CTDate','$CTTime','$newID');";
-			$result = $conn->query($sql_CTScan);
+			if($conn->query($sql_CTScan)=== TRUE){
+				$ScanID  = $conn->insert_id;
+				$success = 1;	
+			}
+			else{
+				$success = 0;
+			}
 			
 			
-			$sql_ScanID = "SELECT * FROM ctscan ORDER BY `ctscan`.`CTScanID` DESC "; 
-			$result = $conn->query($sql_ScanID);
-			$row = $result->fetch_assoc();
-			$ScanID = $row['CTScanID'];
 			
 			//File Upload
 			if (!file_exists("DICOM/'$ScanID")) {
@@ -61,7 +65,10 @@
     }
 }
 }
-			
-			header('Location: studyNew.php');
-			
+			if ($success == 1){
+			header('Location: studyNew_success.php');
+			}
+			else{
+				header('Location: studyNew_fail.php');
+			}
 			?>

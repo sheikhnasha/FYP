@@ -1,0 +1,48 @@
+**********************
+* Welcome to WebGraphy *
+**********************
+   .........................
+|  USER GUIDE  |
+   .........................
+
+WebGraphy is a web based application that includes serverside programing.
+Therefore, inorder to use WebGraphy you eigther need to have following.                                            
+								             
+
+1. Latest Localhost server website like XXAMP or WAMP installed in your computer.
+2 Latest Internet Explorer or Google chrome.
+
+N/B : I prefer XXAMP and Google Chrome.
+
+To run WEBGRAPHY you need to do the following.
+
+1. Start Apache and MySQL from the XXAMP or WAMP control panel.
+2. At the control panel (navigation) start click on the MySQL Admin button.
+3. Creat e "test" database  -> Click on New located on the left panel of phpMyAdmin page.
+		      ->Type test as your 'Database name' and hit Create.
+		      ->Make sure the Server have no password.
+	 	      -> If there is a password then change username and password as your server's username and password in conn.php.		      
+4. Click on the "test" database, that is just created.
+5. Click on the Import button located at the top panel (navigation). 
+6. Browse the test.sql file located in the folder.
+7. Copy Seasion2 folder and paste it in the localhost's htdocs folder eg: C:\xxamp\htdocs.
+8. Enter url "localhost/seasion2" in your browser.
+9. You should be able to see the login page of WebBGraphy.
+10. To login as an adminitrator enter   	
+	email- 		"nasha@cloudgraphy.com"
+	password - 		"admin123"
+11. To login as an pathologists enter
+	email-		"anthony@nottingham.edu.my"
+	password-		"idc123"
+OR
+	email-		"mojo@jojo.com"
+	password-		"mojojojo"	
+
+
+ ...............................
+| Happy WebGraphy |
+ ..............................
+   	
+
+
+
